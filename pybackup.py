@@ -16,15 +16,18 @@ class BackuperException(Exception):
 
 class Backuper:
 	def __init__(self, repoPath):
-		self.__repoPath = repoPath
+		self.__repoPath = path.abspath(repoPath)
 
 	def run(self):
 		self.__runChecks()
 		print "Creating backup of repository %s" % self.__repoPath
 
+		repoName = path.dirname(self.__repoPath)
+		print "Repository name is %s" % repoName
+
 	def __runChecks(self):
 		if not path.isdir(self.__repoPath):
-			message = "path to repository should be a directory: %s" % self.__repoPath
+			message = "path to repository should be an existing directory: %s" % self.__repoPath
 			raise BackuperException(message)
 
 def main():
