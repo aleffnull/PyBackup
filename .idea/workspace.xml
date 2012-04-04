@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e9760fa-6911-4f7f-9ddb-c229bdd90463" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Backuper.py" afterPath="$PROJECT_DIR$/Backuper.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tests/DirectoryUtilsTests.py" afterPath="$PROJECT_DIR$/Tests/DirectoryUtilsTests.py" />
-    </list>
+    <list default="true" id="9e9760fa-6911-4f7f-9ddb-c229bdd90463" name="Default" comment="" />
     <ignored path="PyBackup.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,7 +10,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="true" />
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
@@ -53,7 +49,7 @@
       <file leaf-file-name="Backuper.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Backuper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="2" selection-start="185" selection-end="185" vertical-scroll-proportion="0.52509654">
+            <state line="9" column="33" selection-start="246" selection-end="246" vertical-scroll-proportion="0.5907336">
               <folding>
                 <element signature="e#34#81#0" expanded="true" />
               </folding>
@@ -182,110 +178,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Python's test.Unittests">
-    <configuration default="false" name="Unittests in GetFullPathTests.testIsNotEmpty" type="tests" factoryName="Unittests" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <module name="PyBackup" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Tests/DirectoryUtilsTests.py" />
-      <option name="CLASS_NAME" value="GetFullPathTests" />
-      <option name="METHOD_NAME" value="testIsNotEmpty" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_METHOD" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <RunnerSettings RunnerId="PythonRunner" />
-      <ConfigurationWrapper RunnerId="PythonRunner" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Doctests in D:\projects\PyBackup" type="tests" factoryName="Doctests" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <module name="PyBackup" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="$PROJECT_DIR$" />
-      <option name="TEST_TYPE" value="TEST_FOLDER" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <RunnerSettings RunnerId="PythonRunner" />
-      <ConfigurationWrapper RunnerId="PythonRunner" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Unittests in D:\projects\PyBackup\Tests" type="tests" factoryName="Unittests" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <module name="PyBackup" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="$PROJECT_DIR$/Tests" />
-      <option name="TEST_TYPE" value="TEST_FOLDER" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <RunnerSettings RunnerId="PythonRunner" />
-      <ConfigurationWrapper RunnerId="PythonRunner" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Unittests in DirectoryUtilsTests.py" type="tests" factoryName="Unittests" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <module name="PyBackup" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Tests/DirectoryUtilsTests.py" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <RunnerSettings RunnerId="PythonRunner" />
-      <ConfigurationWrapper RunnerId="PythonRunner" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Unittests in GetFullPathTests.testIsAbsoluteForCurrentDirectory" type="tests" factoryName="Unittests" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <module name="PyBackup" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Tests/DirectoryUtilsTests.py" />
-      <option name="CLASS_NAME" value="GetFullPathTests" />
-      <option name="METHOD_NAME" value="testIsAbsoluteForCurrentDirectory" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_METHOD" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <RunnerSettings RunnerId="PythonRunner" />
-      <ConfigurationWrapper RunnerId="PythonRunner" />
-      <method />
-    </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -339,26 +231,6 @@
       <option name="USE_PATTERN" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="utrunner" type="PythonConfigurationType" factoryName="Python">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:/Python27/python.exe" />
-      <option name="WORKING_DIRECTORY" value="$APPLICATION_HOME_DIR$/helpers/pycharm" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <module name="PyBackup" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$APPLICATION_HOME_DIR$/helpers/pycharm/utrunner.py" />
-      <option name="PARAMETERS" value="$PROJECT_DIR$/Tests/ true" />
-      <option name="MULTIPROCESS" value="false" />
-      <RunnerSettings RunnerId="PyDebugRunner" />
-      <RunnerSettings RunnerId="PythonRunner" />
-      <ConfigurationWrapper RunnerId="PyDebugRunner" />
-      <ConfigurationWrapper RunnerId="PythonRunner" />
-      <method />
-    </configuration>
     <configuration default="false" name="Unittests" type="tests" factoryName="Unittests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -380,14 +252,8 @@
       <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
     </configuration>
-    <list size="7">
-      <item index="0" class="java.lang.String" itemvalue="Python.utrunner" />
-      <item index="1" class="java.lang.String" itemvalue="Python's test.Unittests in GetFullPathTests.testIsNotEmpty" />
-      <item index="2" class="java.lang.String" itemvalue="Python's test.Doctests in D:\projects\PyBackup" />
-      <item index="3" class="java.lang.String" itemvalue="Python's test.Unittests in D:\projects\PyBackup\Tests" />
-      <item index="4" class="java.lang.String" itemvalue="Python's test.Unittests in DirectoryUtilsTests.py" />
-      <item index="5" class="java.lang.String" itemvalue="Python's test.Unittests" />
-      <item index="6" class="java.lang.String" itemvalue="Python's test.Unittests in GetFullPathTests.testIsAbsoluteForCurrentDirectory" />
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Python's test.Unittests" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
@@ -495,7 +361,7 @@
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <option name="CREATE_PATCH_EXPAND_DETAILS_DEFAULT" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create tests for utility functions." />
+    <option name="LAST_COMMIT_MESSAGE" value="Experiment with code format." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -517,6 +383,7 @@
     <MESSAGE value="Move types to separate files." />
     <MESSAGE value="Create test for utility funtion." />
     <MESSAGE value="Create tests for utility functions." />
+    <MESSAGE value="Experiment with code format." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -596,7 +463,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Backuper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="2" selection-start="185" selection-end="185" vertical-scroll-proportion="0.52509654">
+        <state line="9" column="33" selection-start="246" selection-end="246" vertical-scroll-proportion="0.5907336">
           <folding>
             <element signature="e#34#81#0" expanded="true" />
           </folding>
