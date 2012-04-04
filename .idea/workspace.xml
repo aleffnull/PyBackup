@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e9760fa-6911-4f7f-9ddb-c229bdd90463" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DirectoryUtils.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Tests/DirectoryUtilsTests.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Backuper.py" afterPath="$PROJECT_DIR$/Backuper.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tests/DirectoryUtilsTests.py" afterPath="$PROJECT_DIR$/Tests/DirectoryUtilsTests.py" />
     </list>
     <ignored path="PyBackup.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,10 +39,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DirectoryUtilsTests.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="DirectoryUtilsTests.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Tests/DirectoryUtilsTests.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="26" selection-start="674" selection-end="674" vertical-scroll-proportion="0.7799228">
+            <state line="13" column="34" selection-start="376" selection-end="376" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#34#49#0" expanded="true" />
               </folding>
@@ -51,10 +50,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Backuper.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Backuper.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Backuper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="0" selection-start="636" selection-end="838" vertical-scroll-proportion="0.0">
+            <state line="8" column="2" selection-start="185" selection-end="185" vertical-scroll-proportion="0.52509654">
               <folding>
                 <element signature="e#34#81#0" expanded="true" />
               </folding>
@@ -85,9 +84,9 @@
         <option value="$PROJECT_DIR$/pybackup.py" />
         <option value="$PROJECT_DIR$/FileUtils.py" />
         <option value="$PROJECT_DIR$/Tests/Foo.py" />
-        <option value="$PROJECT_DIR$/Backuper.py" />
         <option value="$PROJECT_DIR$/DirectoryUtils.py" />
         <option value="$PROJECT_DIR$/Tests/DirectoryUtilsTests.py" />
+        <option value="$PROJECT_DIR$/Backuper.py" />
       </list>
     </option>
   </component>
@@ -440,10 +439,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="776" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.45954692" order="3" side_tool="false" content_ui="tabs" x="437" y="71" width="406" height="618" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5404531" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5404531" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32847896" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32847896" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
@@ -456,7 +456,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -496,7 +495,7 @@
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <option name="CREATE_PATCH_EXPAND_DETAILS_DEFAULT" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Move types to separate files." />
+    <option name="LAST_COMMIT_MESSAGE" value="Create tests for utility functions." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -516,6 +515,8 @@
     <MESSAGE value="README was added." />
     <MESSAGE value="README beautification." />
     <MESSAGE value="Move types to separate files." />
+    <MESSAGE value="Create test for utility funtion." />
+    <MESSAGE value="Create tests for utility functions." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -570,15 +571,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Backuper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="636" selection-end="838" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#34#81#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DirectoryUtils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="21" selection-start="166" selection-end="166" vertical-scroll-proportion="0.0">
@@ -595,9 +587,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Tests/DirectoryUtilsTests.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="26" selection-start="674" selection-end="674" vertical-scroll-proportion="0.7799228">
+        <state line="13" column="34" selection-start="376" selection-end="376" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#34#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Backuper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="2" selection-start="185" selection-end="185" vertical-scroll-proportion="0.52509654">
+          <folding>
+            <element signature="e#34#81#0" expanded="true" />
           </folding>
         </state>
       </provider>

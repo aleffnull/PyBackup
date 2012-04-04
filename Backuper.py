@@ -5,6 +5,7 @@ from DirectoryUtils import GetFullAbsolutePath,GetDirectoryName
 from os import path
 
 class Backuper:
+
 	def __init__(self, repoPath):
 		self.__repoPath = GetFullAbsolutePath(repoPath)
 
