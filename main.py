@@ -6,10 +6,19 @@ __version__ = "1.0"
 import logging
 import logging.config
 
+def run():
+	pass
+
 def main():
 	logging.config.fileConfig("logging.conf")
 	log = logging.getLogger()
 	log.info("PyBackup %s by %s" % (__version__, __author__))
+
+	try:
+		run()
+	except Exception as exception:
+		log.error(exception)
+
 	log.info("Execution finished")
 
 #	parser = OptionParser()
