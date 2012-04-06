@@ -8,7 +8,6 @@ import logging.config
 from optparse import OptionParser
 from sys import exit
 
-import BackuperException
 from Backuper import Backuper
 
 def main():
@@ -27,9 +26,6 @@ def main():
 
 		backuper = Backuper(options.repoPath)
 		backuper.run()
-	except BackuperException as backuperException:
-		log.error("Backup failed: %s" % backuperException.message)
-		log.exception(backuperException)
 	except Exception as exception:
 		log.exception(exception)
 
