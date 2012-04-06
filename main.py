@@ -5,9 +5,11 @@ __version__ = "1.0"
 
 import logging
 import logging.config
+from optparse import OptionParser
+from sys import exit
 
-def run():
-	pass
+import BackuperException
+from Backuper import Backuper
 
 def main():
 	logging.config.fileConfig("logging.conf")
@@ -15,24 +17,23 @@ def main():
 	log.info("PyBackup %s by %s" % (__version__, __author__))
 
 	try:
-		run()
+		parser = OptionParser()
+		parser.add_option("-r", "--repo", dest="repoPath", help="path to repository")
+		(options, args) = parser.parse_args()
+
+		if options.repoPath is None:
+			log.error("path to repository is required")
+			exit()
+
+		backuper = Backuper(options.repoPath)
+		backuper.run()
+	except BackuperException as backuperException:
+		log.error("Backup failed: %s" % backuperException.message)
+		log.exception(backuperException)
 	except Exception as exception:
-		log.error(exception)
+		log.exception(exception)
 
 	log.info("Execution finished")
-
-#	parser = OptionParser()
-#	parser.add_option("-r", "--repo", dest="repoPath", help="path to repository")
-#	(options, args) = parser.parse_args()
-#
-#	if options.repoPath is None:
-#		parser.error("path to repository is required")
-#
-#	backuper = Backuper(options.repoPath)
-#	try:
-#		backuper.run()
-#	except BackuperException as exception:
-#		print "Error occurred: %s" % exception.message
 
 if __name__ == "__main__":
 	main()
