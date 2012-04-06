@@ -1,6 +1,6 @@
 __author__ = 'Mikhail K. Savkin'
 
-import os.path as path
+from os import path
 
 def IsGitRepo(repoPath):
 	isDir = path.isdir(repoPath)

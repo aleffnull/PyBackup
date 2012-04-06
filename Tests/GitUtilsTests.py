@@ -1,39 +1,39 @@
 __author__ = 'Mikhail K. Savkin'
 
-import os
-import shutil
-import tempfile
-import unittest
+from os import path, rmdir
+from shutil import rmtree
+from tempfile import mkdtemp, NamedTemporaryFile
+from unittest import main, TestCase
 
-import GitUtils
+from GitUtils import IsGitRepo
 
-class IsGitRepoTests(unittest.TestCase):
+class IsGitRepoTests(TestCase):
 
 	def test_File_NotRepo(self):
-		tempFile = tempfile.NamedTemporaryFile()
+		tempFile = NamedTemporaryFile()
 		try:
-			result = GitUtils.IsGitRepo(tempFile.name)
+			result = IsGitRepo(tempFile.name)
 			self.assertFalse(result)
 		finally:
 			tempFile.close()
 
 	def test_EmptyDirectory_NotRepo(self):
-		emptyDir = tempfile.mkdtemp()
+		emptyDir = mkdtemp()
 		try:
-			result = GitUtils.IsGitRepo(emptyDir)
+			result = IsGitRepo(emptyDir)
 			self.assertFalse(result)
 		finally:
-			os.rmdir(emptyDir)
+			rmdir(emptyDir)
 
 	def test_HeadFilePresent_IsRepo(self):
-		dir = tempfile.mkdtemp()
+		dir = mkdtemp()
 		try:
-			headFile = os.path.join(dir, "HEAD")
+			headFile = path.join(dir, "HEAD")
 			open(headFile, "w").close()
-			result = GitUtils.IsGitRepo(dir)
+			result = IsGitRepo(dir)
 			self.assertTrue(result)
 		finally:
-			shutil.rmtree(dir)
+			rmtree(dir)
 
 if __name__ == '__main__':
-	unittest.main()
+	main()

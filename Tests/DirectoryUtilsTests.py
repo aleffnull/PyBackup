@@ -1,9 +1,9 @@
 __author__ = 'Mikhail K. Savkin'
 
-import unittest
+from unittest import main, TestCase
 from DirectoryUtils import GetFullAbsolutePath, GetDirectoryName
 
-class GetFullPathTests(unittest.TestCase):
+class GetFullPathTests(TestCase):
 
 	def test_ResultIsNotEmpty(self):
 		result = GetFullAbsolutePath(".")
@@ -17,7 +17,7 @@ class GetFullPathTests(unittest.TestCase):
 		result = GetFullAbsolutePath("..")
 		self.assertFalse(".." in result)
 
-class GetDirectoryNameTests(unittest.TestCase):
+class GetDirectoryNameTests(TestCase):
 
 	def test_RelativePathSlash(self):
 		result = GetDirectoryName("foo/")
@@ -40,4 +40,4 @@ class GetDirectoryNameTests(unittest.TestCase):
 		self.assertEqual(result, "buz")
 
 if __name__ == '__main__':
-	unittest.main()
+	main()
