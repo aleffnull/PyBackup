@@ -1,22 +1,20 @@
 __author__ = 'Mikhail K. Savkin'
 
-from BackuperException import BackuperException
-from DirectoryUtils import GetFullAbsolutePath,GetDirectoryName
-from os import path
+from logging import getLogger
+
+from DirectoryUtils import GetFullAbsolutePath
+from GitUtils import IsGitRepo
 
 class Backuper:
 
 	def __init__(self, repoPath):
+		self.__log = getLogger(__name__)
 		self.__repoPath = GetFullAbsolutePath(repoPath)
 
 	def run(self):
-		self.__runChecks()
-		print "Creating backup of repository '%s'" % self.__repoPath
+		isRepo = IsGitRepo(self.__repoPath)
+		if not isRepo:
+			self.__log.error("'%s' is not Git repository" % self.__repoPath)
+			return
 
-		repoName = GetDirectoryName(self.__repoPath)
-		print "Repository name is '%s'" % repoName
-
-	def __runChecks(self):
-		if not path.isdir(self.__repoPath):
-			message = "path to repository should be an existing directory: %s" % self.__repoPath
-			raise BackuperException(message)
+		self.__log.info("Creating backup of repository '%s'" % self.__repoPath)

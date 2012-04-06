@@ -13,7 +13,7 @@ from Backuper import Backuper
 
 def main():
 	logging.config.fileConfig("logging.conf")
-	log = logging.getLogger()
+	log = logging.getLogger(__name__)
 	log.info("PyBackup %s by %s" % (__version__, __author__))
 
 	try:
