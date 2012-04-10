@@ -14,7 +14,6 @@ class Backuper:
 	def run(self):
 		isRepo = IsGitRepo(self.__repoPath)
 		if not isRepo:
-			self.__log.error("'%s' is not Git repository" % self.__repoPath)
-			return
+			raise ValueError("'%s' is not Git repository" % self.__repoPath)
 
 		self.__log.info("Creating backup of repository '%s'" % self.__repoPath)
