@@ -2,7 +2,7 @@ __author__ = 'Mikhail K. Savkin'
 
 from logging import getLogger
 
-from DirectoryUtils import GetFullAbsolutePath
+from DirectoryUtils import GetDirectoryName, GetFullAbsolutePath
 from GitUtils import IsGitRepo
 
 class Backuper:
@@ -17,3 +17,6 @@ class Backuper:
 			raise ValueError("'%s' is not Git repository" % self.__repoPath)
 
 		self.__log.info("Creating backup of repository '%s'" % self.__repoPath)
+
+		repoName = GetDirectoryName(self.__repoPath)
+		self.__log.info("Repository name is '%s'" % repoName)
