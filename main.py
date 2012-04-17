@@ -18,13 +18,14 @@ def main():
 	try:
 		parser = OptionParser()
 		parser.add_option("-r", "--repo", dest="repoPath", help="path to repository")
+		parser.add_option("-t", "--temp", dest="tempDir", help="path to temp directory")
 		(options, args) = parser.parse_args()
 
 		if options.repoPath is None:
 			log.error("path to repository is required")
 			exit()
 
-		backuper = Backuper(options.repoPath)
+		backuper = Backuper(options.repoPath, options.tempDir)
 		backuper.run()
 	except Exception as exception:
 		log.exception(exception)
