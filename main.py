@@ -3,16 +3,16 @@
 __author__ = "Mikhail K. Savkin"
 __version__ = "1.0"
 
-import logging
-import logging.config
+from logging import getLogger
+from logging.config import fileConfig
 from optparse import OptionParser
 from sys import exit
 
 from Backuper import Backuper
 
 def main():
-	logging.config.fileConfig("logging.conf")
-	log = logging.getLogger(__name__)
+	fileConfig("logging.conf")
+	log = getLogger(__name__)
 	log.info("PyBackup %s by %s" % (__version__, __author__))
 
 	try:
