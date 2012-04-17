@@ -14,16 +14,14 @@ class Backuper:
 
 	def run(self):
 		self.__runChecks()
-
-		isRepo = IsGitRepo(self.__repoPath)
-		if not isRepo:
-			raise ValueError("'%s' is not Git repository" % self.__repoPath)
-
 		self.__log.info("Creating backup of repository '%s'" % self.__repoPath)
-
 		repoName = GetDirectoryName(self.__repoPath)
 		self.__log.info("Repository name is '%s'" % repoName)
 
 	def __runChecks(self):
 		if self.__repoPath is None:
 			raise ValueError("Path to repository is required")
+
+		isRepo = IsGitRepo(self.__repoPath)
+		if not isRepo:
+			raise ValueError("'%s' is not Git repository" % self.__repoPath)
