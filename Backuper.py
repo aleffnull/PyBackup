@@ -7,7 +7,7 @@ from GitUtils import IsGitRepo
 
 class Backuper:
 
-	def __init__(self, repoPath, tempDir):
+	def __init__(self, repoPath, tempDir=None):
 		self.__log = getLogger(__name__)
 		self.__repoPath = GetFullAbsolutePath(repoPath)
 		self.__tempDir = tempDir
