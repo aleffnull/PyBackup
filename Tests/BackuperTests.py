@@ -2,8 +2,8 @@ __author__ = 'Mikhail K. Savkin'
 
 from mock import patch
 from os import rmdir, path
+from tempfile import mkdtemp
 from unittest import main, TestCase
-import tempfile
 
 from Backuper import Backuper
 
@@ -14,7 +14,7 @@ class RunTests(TestCase):
 		self.assertRaises(ValueError, backuper.run)
 
 	def test_NotGitRepo_Error(self):
-		emptyDir = tempfile.mkdtemp()
+		emptyDir = mkdtemp()
 		try:
 			backuper = Backuper(emptyDir)
 			self.assertRaises(ValueError, backuper.run)
@@ -27,7 +27,7 @@ class RunTests(TestCase):
 		backuper.run()
 
 	def test_GitRepo_NoTempDir_TempDirIsCleaned(self):
-		tempDir = tempfile.mkdtemp()
+		tempDir = mkdtemp()
 		self.assertTrue(path.exists(tempDir))
 
 		repoPath = self.__getGitRepoPath()
