@@ -1,9 +1,11 @@
 __author__ = 'Mikhail K. Savkin'
 
 from logging import getLogger
+from os import path
 from shutil import rmtree
 import tempfile
 
+from DateUtils import GetTimestampAsFileName
 from DirectoryUtils import GetDirectoryName, GetFullAbsolutePath
 from GitUtils import IsGitRepo
 
@@ -17,8 +19,6 @@ class Backuper:
 	def run(self):
 		self.__runChecks()
 		self.__log.info("Creating backup of repository '%s'" % self.__repoPath)
-		repoName = GetDirectoryName(self.__repoPath)
-		self.__log.info("Repository name is '%s'" % repoName)
 
 		removeTempDir = self.__tempDir is None
 		tempDir = tempfile.mkdtemp() if self.__tempDir is None else self.__tempDir
@@ -38,4 +38,9 @@ class Backuper:
 			raise ValueError("'%s' is not Git repository" % self.__repoPath)
 
 	def __doBackup(self, tempDir):
-		pass
+		repoName = GetDirectoryName(self.__repoPath)
+		timestamp = GetTimestampAsFileName()
+		bundleName = "%s_%s.bundle" % (repoName, timestamp)
+		bundlePath = path.join(tempDir, bundleName)
+
+		self.__log.info("Creating bundle '%s'" % bundlePath)

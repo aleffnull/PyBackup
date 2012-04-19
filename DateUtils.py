@@ -4,6 +4,6 @@ from datetime import datetime
 
 def GetTimestampAsFileName():
 	now = datetime.now()
-	timestamp = now.strftime("%Y-%m-%d-%H-%M-%S")
+	timestamp = now.strftime("%Y-%m-%d_%H-%M-%S")
 
 	return timestamp

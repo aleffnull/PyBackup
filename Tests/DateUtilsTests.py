@@ -12,7 +12,7 @@ class GetTimestampAsFileNameTests(TestCase):
 
 	def test_Format(self):
 		timestamp = GetTimestampAsFileName()
-		self.assertRegexpMatches(timestamp, "\d{4}-\d{2}-\d{2}-\d{2}-\d{2}-\d{2}")
+		self.assertRegexpMatches(timestamp, "\d{4}-\d{2}-\d{2}_\d{2}-\d{2}-\d{2}")
 
 if __name__ == '__main__':
 	main()
