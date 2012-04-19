@@ -7,13 +7,13 @@ import tempfile
 
 from Backuper import Backuper
 
-class MyTestCase(TestCase):
+class RunTests(TestCase):
 
-	def test_run_NoRepo(self):
+	def test_NoRepo_Error(self):
 		backuper = Backuper(None)
 		self.assertRaises(ValueError, backuper.run)
 
-	def test_run_NotGitRepo(self):
+	def test_NotGitRepo_Error(self):
 		emptyDir = tempfile.mkdtemp()
 		try:
 			backuper = Backuper(emptyDir)
@@ -21,12 +21,12 @@ class MyTestCase(TestCase):
 		finally:
 			rmdir(emptyDir)
 
-	def test_run_GitRepo(self):
+	def test_GitRepo_Success(self):
 		repoPath = self.__getGitRepoPath()
 		backuper = Backuper(repoPath)
 		backuper.run()
 
-	def test_run_TempGitIsCleaned(self):
+	def test_GitRepo_NoTempDir_TempDirIsCleaned(self):
 		tempDir = tempfile.mkdtemp()
 		self.assertTrue(path.exists(tempDir))
 
