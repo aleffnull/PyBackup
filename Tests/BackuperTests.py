@@ -36,6 +36,7 @@ class MyTestCase(TestCase):
 			backuper = Backuper(repoPath)
 			backuper.run()
 
+		mkdtemp_mock.assert_called_once_with()
 		self.assertFalse(path.exists(tempDir))
 
 	def __getGitRepoPath(self):
