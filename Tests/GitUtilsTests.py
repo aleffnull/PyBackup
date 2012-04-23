@@ -1,11 +1,11 @@
 __author__ = 'Mikhail K. Savkin'
 
-from os import path, rmdir
-from shutil import rmtree
+from os import rmdir
 from tempfile import mkdtemp, NamedTemporaryFile
 from unittest import main, TestCase
 
 from GitUtils import IsGitRepo
+from TestHelpers import GetBareRepoPath, GetCommonRepoPath
 
 class IsGitRepoTests(TestCase):
 
@@ -25,15 +25,15 @@ class IsGitRepoTests(TestCase):
 		finally:
 			rmdir(emptyDir)
 
-	def test_HeadFilePresent_IsRepo(self):
-		dir = mkdtemp()
-		try:
-			headFile = path.join(dir, "HEAD")
-			open(headFile, "w").close()
-			result = IsGitRepo(dir)
-			self.assertTrue(result)
-		finally:
-			rmtree(dir)
+	def test_BareRepo_IsRepo(self):
+		path = GetBareRepoPath()
+		result = IsGitRepo(path)
+		self.assertTrue(result)
+
+	def test_CommonRepo_IsRepo(self):
+		path = GetCommonRepoPath()
+		result = IsGitRepo(path)
+		self.assertTrue(result)
 
 if __name__ == '__main__':
 	main()

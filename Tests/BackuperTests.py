@@ -7,6 +7,7 @@ from tempfile import mkdtemp
 from unittest import main, TestCase
 
 from Backuper import Backuper
+from TestHelpers import GetBareRepoPath
 
 class RunTests(TestCase):
 
@@ -23,7 +24,7 @@ class RunTests(TestCase):
 			rmdir(emptyDir)
 
 	def test_GitRepo_Success(self):
-		repoPath = self.__getGitRepoPath()
+		repoPath = GetBareRepoPath()
 		backuper = Backuper(repoPath)
 		backuper.run()
 
@@ -31,7 +32,7 @@ class RunTests(TestCase):
 		tempDir = mkdtemp()
 		self.assertTrue(path.exists(tempDir))
 
-		repoPath = self.__getGitRepoPath()
+		repoPath = GetBareRepoPath()
 		with patch('tempfile.mkdtemp') as mkdtemp_mock:
 			mkdtemp_mock.return_value = tempDir
 			backuper = Backuper(repoPath)
@@ -41,7 +42,7 @@ class RunTests(TestCase):
 		self.assertFalse(path.exists(tempDir))
 
 	def test_GitRepo_GotTempDir_NoTempDirCreated(self):
-		repoPath = self.__getGitRepoPath()
+		repoPath = GetBareRepoPath()
 		tempDir = mkdtemp()
 		try:
 			with patch('tempfile.mkdtemp') as mkdtemp_mock:
@@ -51,12 +52,6 @@ class RunTests(TestCase):
 			self.assertFalse(mkdtemp_mock.called)
 		finally:
 			rmtree(tempDir)
-
-	def __getGitRepoPath(self):
-		currentDir = path.dirname(path.abspath(__file__))
-		repoPath = path.join(currentDir, "repo.git")
-
-		return repoPath
 
 if __name__ == '__main__':
 	main()
