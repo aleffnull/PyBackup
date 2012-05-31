@@ -6,12 +6,12 @@ from BaseRepoTestCase import BaseRepoTestCase
 class GetBareRepoPathTests(BaseRepoTestCase):
 
 	def test_Exists(self):
-		print BaseRepoTestCase._getBareRepoPath()
+		print super(GetBareRepoPathTests, self)._getBareRepoPath()
 
 class GetCommonRepoPathTests(BaseRepoTestCase):
 
 	def test_Exists(self):
-		print BaseRepoTestCase._getCommonRepoPath()
+		print super(GetCommonRepoPathTests, self)._getCommonRepoPath()
 
 if __name__ == '__main__':
 	main()

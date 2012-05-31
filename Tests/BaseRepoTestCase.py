@@ -12,12 +12,10 @@ class BaseRepoTestCase(TestCase):
 		super(BaseRepoTestCase, cls)
 		cls.__bareRepoPath = "bare"
 		cls.__commonRepoPath = "common"
-		print("hello from class setup")
 
 	@classmethod
 	def tearDownClass(cls):
 		super(BaseRepoTestCase, cls)
-		print("hello from class tear down")
 
 	@classmethod
 	def _getBareRepoPath(cls):
