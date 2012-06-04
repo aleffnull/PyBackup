@@ -3,7 +3,11 @@ __author__ = 'Mikhail K. Savkin'
 from unittest import main, TestCase
 from DirectoryUtils import GetFullAbsolutePath, GetDirectoryName
 
-class GetFullPathTests(TestCase):
+class GetFullAbsolutePathTests(TestCase):
+
+	def test_None_NoneReturned(self):
+		result = GetFullAbsolutePath(None)
+		self.assertIsNone(result)
 
 	def test_ResultIsNotEmpty(self):
 		result = GetFullAbsolutePath(".")

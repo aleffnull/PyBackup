@@ -3,7 +3,13 @@ __author__ = 'Mikhail K. Savkin'
 from os import path
 
 def GetFullAbsolutePath(relativePath):
-	return path.normpath(path.abspath(relativePath))
+	if relativePath is None:
+		return None
+
+	absolutePath = path.abspath(relativePath)
+	normPath = path.normpath(absolutePath)
+
+	return normPath
 
 def GetDirectoryName(directoryPath):
 	dummyFile = path.join(directoryPath, "dummy.txt")
