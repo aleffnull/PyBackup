@@ -1,7 +1,7 @@
 __author__ = 'Mikhail K. Savkin'
 
 from mock import patch
-from os import rmdir, path
+from os import listdir, rmdir, path
 from shutil import rmtree
 from tempfile import mkdtemp
 from unittest import main
@@ -55,6 +55,18 @@ class RunTests(BaseRepoTestCase):
 				backuper.run()
 
 			self.assertFalse(mkdtemp_mock.called)
+		finally:
+			rmtree(tempDir)
+
+	def test_BareGitRepo_GotTempDir_TempDirIsCleaned(self):
+		repoPath = super(self.__class__, self)._getBareRepoPath()
+		tempDir = mkdtemp()
+		try:
+			backuper = Backuper(repoPath, tempDir)
+			backuper.run()
+
+			tempDirContents = listdir(tempDir)
+			self.assertEqual(len(tempDirContents), 0)
 		finally:
 			rmtree(tempDir)
 
