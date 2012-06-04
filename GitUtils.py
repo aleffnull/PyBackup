@@ -1,13 +1,23 @@
 __author__ = 'Mikhail K. Savkin'
 
-from os import path
+from os.path import exists, isdir, join
 
 def IsGitRepo(repoPath):
-	isDir = path.isdir(repoPath)
+	GitDir = ".git"
+	HeadFile = "HEAD"
+
+	isDir = isdir(repoPath)
 	if not isDir:
 		return False
 
-	headFile = path.join(repoPath, "HEAD")
-	isRepo = path.exists(headFile)
+	headFile = join(repoPath, HeadFile)
+	headExists = exists(headFile)
+	if headExists:
+		return True
 
-	return isRepo
+	headFile = join(repoPath, GitDir, HeadFile)
+	headExists = exists(headFile)
+	if headExists:
+		return True
+
+	return False

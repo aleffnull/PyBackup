@@ -1,13 +1,15 @@
 __author__ = 'Mikhail K. Savkin'
 
-from os import rmdir
+from os import mkdir, rmdir
+from os.path import join
+from shutil import rmtree
 from tempfile import mkdtemp, NamedTemporaryFile
-from unittest import main, TestCase
+from unittest import main
 
+from BaseRepoTestCase import BaseRepoTestCase
 from GitUtils import IsGitRepo
-from TestHelpers import GetBareRepoPath, GetCommonRepoPath
 
-class IsGitRepoTests(TestCase):
+class IsGitRepoTests(BaseRepoTestCase):
 
 	def test_File_NotRepo(self):
 		tempFile = NamedTemporaryFile()
@@ -25,13 +27,33 @@ class IsGitRepoTests(TestCase):
 		finally:
 			rmdir(emptyDir)
 
+	def test_EmptyBareRepository_NotRepo(self):
+		dir = mkdtemp()
+		try:
+			emptyRepo = join(dir, "repo.git")
+			mkdir(emptyRepo)
+			result = IsGitRepo(emptyRepo)
+			self.assertFalse(result)
+		finally:
+			rmtree(dir)
+
+	def test_EmptyCommonRepository_NotRepo(self):
+		dir = mkdtemp()
+		try:
+			emptyRepo = join(dir, ".git")
+			mkdir(emptyRepo)
+			result = IsGitRepo(emptyRepo)
+			self.assertFalse(result)
+		finally:
+			rmtree(dir)
+
 	def test_BareRepo_IsRepo(self):
-		path = GetBareRepoPath()
+		path = super(IsGitRepoTests, self)._getBareRepoPath()
 		result = IsGitRepo(path)
 		self.assertTrue(result)
 
 	def test_CommonRepo_IsRepo(self):
-		path = GetCommonRepoPath()
+		path = super(IsGitRepoTests, self)._getCommonRepoPath()
 		result = IsGitRepo(path)
 		self.assertTrue(result)
 
