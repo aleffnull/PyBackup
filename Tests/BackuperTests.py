@@ -24,12 +24,12 @@ class RunTests(BaseRepoTestCase):
 			rmdir(emptyDir)
 
 	def test_BareGitRepo_Success(self):
-		repoPath = super(RunTests, self)._getBareRepoPath()
+		repoPath = super(self.__class__, self)._getBareRepoPath()
 		backuper = Backuper(repoPath)
 		backuper.run()
 
 	def test_CommonGitRepo_Success(self):
-		repoPath = super(RunTests, self)._getCommonRepoPath()
+		repoPath = super(self.__class__, self)._getCommonRepoPath()
 		backuper = Backuper(repoPath)
 		backuper.run()
 
@@ -37,7 +37,7 @@ class RunTests(BaseRepoTestCase):
 		tempDir = mkdtemp()
 		self.assertTrue(path.exists(tempDir))
 
-		repoPath = super(RunTests, self)._getBareRepoPath()
+		repoPath = super(self.__class__, self)._getBareRepoPath()
 		with patch('tempfile.mkdtemp') as mkdtemp_mock:
 			mkdtemp_mock.return_value = tempDir
 			backuper = Backuper(repoPath)
@@ -47,7 +47,7 @@ class RunTests(BaseRepoTestCase):
 		self.assertFalse(path.exists(tempDir))
 
 	def test_BareGitRepo_GotTempDir_NoTempDirCreated(self):
-		repoPath = super(RunTests, self)._getBareRepoPath()
+		repoPath = super(self.__class__, self)._getBareRepoPath()
 		tempDir = mkdtemp()
 		try:
 			with patch('tempfile.mkdtemp') as mkdtemp_mock:

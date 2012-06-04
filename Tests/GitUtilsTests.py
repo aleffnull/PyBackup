@@ -48,12 +48,12 @@ class IsGitRepoTests(BaseRepoTestCase):
 			rmtree(dir)
 
 	def test_BareRepo_IsRepo(self):
-		path = super(IsGitRepoTests, self)._getBareRepoPath()
+		path = super(self.__class__, self)._getBareRepoPath()
 		result = IsGitRepo(path)
 		self.assertTrue(result)
 
 	def test_CommonRepo_IsRepo(self):
-		path = super(IsGitRepoTests, self)._getCommonRepoPath()
+		path = super(self.__class__, self)._getCommonRepoPath()
 		result = IsGitRepo(path)
 		self.assertTrue(result)
 
