@@ -7,7 +7,7 @@ import tempfile
 
 from DateUtils import GetTimestampAsFileName
 from DirectoryUtils import GetDirectoryName, GetFullAbsolutePath
-from GitUtils import IsGitRepo
+from GitUtils import GetRepoName, IsGitRepo
 
 class Backuper:
 
@@ -38,7 +38,8 @@ class Backuper:
 			raise ValueError("'%s' is not Git repository" % self.__repoPath)
 
 	def __doBackup(self, tempDir):
-		repoName = GetDirectoryName(self.__repoPath)
+		directoryName = GetDirectoryName(self.__repoPath)
+		repoName = GetRepoName(directoryName)
 		timestamp = GetTimestampAsFileName()
 		bundleName = "%s_%s.bundle" % (repoName, timestamp)
 		bundlePath = path.join(tempDir, bundleName)

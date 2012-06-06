@@ -4,10 +4,10 @@ from os import mkdir, rmdir
 from os.path import join
 from shutil import rmtree
 from tempfile import mkdtemp, NamedTemporaryFile
-from unittest import main
+from unittest import main, TestCase
 
 from BaseRepoTestCase import BaseRepoTestCase
-from GitUtils import IsGitRepo
+from GitUtils import GetRepoName, IsGitRepo
 
 class IsGitRepoTests(BaseRepoTestCase):
 
@@ -56,6 +56,22 @@ class IsGitRepoTests(BaseRepoTestCase):
 		path = super(self.__class__, self)._getCommonRepoPath()
 		result = IsGitRepo(path)
 		self.assertTrue(result)
+
+class GetRepoNameTests(TestCase):
+
+	def test_NoneDirectory_ValueError(self):
+		self.assertRaises(ValueError, GetRepoName, None)
+
+	def test_EmptyDirectoryName_ValueError(self):
+		self.assertRaises(ValueError, GetRepoName, "")
+
+	def test_CommonRepoName_SameNameReturned(self):
+		repoName = GetRepoName("repo")
+		self.assertEqual(repoName, "repo")
+
+	def test_BareRepoName_GitSuffixStripped(self):
+		repoName = GetRepoName("repo.git")
+		self.assertEqual(repoName, "repo")
 
 if __name__ == '__main__':
 	main()

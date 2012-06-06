@@ -1,6 +1,7 @@
 __author__ = 'Mikhail K. Savkin'
 
 from os.path import exists, isdir, join
+from re import match
 
 def IsGitRepo(repoPath):
 	GitDir = ".git"
@@ -21,3 +22,15 @@ def IsGitRepo(repoPath):
 		return True
 
 	return False
+
+def GetRepoName(directoryName):
+	if directoryName is None or len(directoryName) == 0:
+		raise ValueError("directoryName parameter must be specified")
+
+	pattern = "(.*)\.git"
+	m = match(pattern, directoryName)
+	if m is None:
+		return directoryName
+
+	repoName = m.group(1)
+	return repoName
