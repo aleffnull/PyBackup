@@ -1,9 +1,11 @@
 __author__ = 'Mikhail K. Savkin'
 
-from unittest import main, TestCase
+from unittest import main
+
+from BaseLoggingTestCase import BaseLoggingTestCase
 from DateUtils import GetTimestampAsFileName
 
-class GetTimestampAsFileNameTests(TestCase):
+class GetTimestampAsFileNameTests(BaseLoggingTestCase):
 
 	def test_NotEmpty(self):
 		timestamp = GetTimestampAsFileName()

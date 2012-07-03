@@ -4,10 +4,11 @@ from os import listdir, sep
 from os.path import abspath, dirname, isdir, join, split
 from shutil import rmtree
 from tempfile import mkdtemp
-from unittest import TestCase
 from zipfile import ZipFile
 
-class BaseRepoTestCase(TestCase):
+from BaseLoggingTestCase import BaseLoggingTestCase
+
+class BaseRepoTestCase(BaseLoggingTestCase):
 
 	__BareRepoFileName = "Data%srepo.git.zip" % sep
 	__CommonRepoFileName = "Data%srepo.zip" % sep
