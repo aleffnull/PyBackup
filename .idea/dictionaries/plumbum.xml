@@ -5,6 +5,8 @@
       <w>conf</w>
       <w>repo</w>
       <w>savkin</w>
+      <w>stderr</w>
+      <w>stdout</w>
       <w>tempfile</w>
     </words>
   </dictionary>
