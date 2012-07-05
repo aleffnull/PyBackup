@@ -5,17 +5,19 @@ from subprocess import PIPE, Popen
 
 class ProcessRunner:
 
-	def __init__(self):
+	def __init__(self, command, *args):
 		self.__log = getLogger(__name__)
+		self.__run(command, *args)
 
-	def run(self, command, *args):
+	def __run(self, command, *args):
 		self.__log.debug(
 			"Running process '%s' with arguments (%s)",
 			command, ", ".join(args))
 		argsList = [command]
 		if len(args):
 			argsList += args
-		process = Popen(argsList, stdout=PIPE, stderr=PIPE)
+		# We need shell=True to find *.bat files in PATH
+		process = Popen(argsList, stdout=PIPE, stderr=PIPE, shell=True)
 		(outputData, errorData) = process.communicate()
 
 		self.__log.debug("Process STDOUT: %s", outputData)
