@@ -8,6 +8,7 @@ import tempfile
 from DateUtils import GetTimestampAsFileName
 from DirectoryUtils import GetDirectoryName, GetFullAbsolutePath
 from GitUtils import GetRepoName, IsGitRepo
+from ProcessRunner import ProcessRunner
 
 class Backuper:
 
@@ -30,12 +31,22 @@ class Backuper:
 				rmtree(tempDir)
 
 	def __runChecks(self):
+		# Path to repository must be specified.
 		if self.__repoPath is None:
 			raise ValueError("Path to repository is required")
 
+		# Repository must be a Git repository.
 		isRepo = IsGitRepo(self.__repoPath)
 		if not isRepo:
 			raise ValueError("'%s' is not Git repository" % self.__repoPath)
+
+		# `git' command must be accessible.
+		self.__log.debug("Checking `git' command availability")
+		try:
+			ProcessRunner("git", "--version")
+		except:
+			raise RuntimeError("`git' command is not accessible")
+		self.__log.debug("`git' is available")
 
 	def __doBackup(self, tempDir):
 		directoryName = GetDirectoryName(self.__repoPath)

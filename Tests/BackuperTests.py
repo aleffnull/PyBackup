@@ -9,13 +9,14 @@ from unittest import main
 from Backuper import Backuper
 from BaseRepoTestCase import BaseRepoTestCase
 
+@patch('Backuper.ProcessRunner')
 class RunTests(BaseRepoTestCase):
 
-	def test_NoRepo_Error(self):
+	def test_NoRepo_Error(self, processRunnerMock):
 		backuper = Backuper(None)
 		self.assertRaises(ValueError, backuper.run)
 
-	def test_NotGitRepo_Error(self):
+	def test_NotGitRepo_Error(self, processRunnerMock):
 		emptyDir = mkdtemp()
 		try:
 			backuper = Backuper(emptyDir)
@@ -23,17 +24,17 @@ class RunTests(BaseRepoTestCase):
 		finally:
 			rmdir(emptyDir)
 
-	def test_BareGitRepo_Success(self):
+	def test_BareGitRepo_Success(self, processRunnerMock):
 		repoPath = super(self.__class__, self)._getBareRepoPath()
 		backuper = Backuper(repoPath)
 		backuper.run()
 
-	def test_CommonGitRepo_Success(self):
+	def test_CommonGitRepo_Success(self, processRunnerMock):
 		repoPath = super(self.__class__, self)._getCommonRepoPath()
 		backuper = Backuper(repoPath)
 		backuper.run()
 
-	def test_BareGitRepo_NoTempDir_TempDirIsCleaned(self):
+	def test_BareGitRepo_NoTempDir_TempDirIsCleaned(self, processRunnerMock):
 		tempDir = mkdtemp()
 		self.assertTrue(path.exists(tempDir))
 
@@ -46,7 +47,7 @@ class RunTests(BaseRepoTestCase):
 		mkdtemp_mock.assert_called_once_with()
 		self.assertFalse(path.exists(tempDir))
 
-	def test_BareGitRepo_GotTempDir_NoTempDirCreated(self):
+	def test_BareGitRepo_GotTempDir_NoTempDirCreated(self, processRunnerMock):
 		repoPath = super(self.__class__, self)._getBareRepoPath()
 		tempDir = mkdtemp()
 		try:
@@ -58,7 +59,7 @@ class RunTests(BaseRepoTestCase):
 		finally:
 			rmtree(tempDir)
 
-	def test_BareGitRepo_GotTempDir_TempDirIsCleaned(self):
+	def test_BareGitRepo_GotTempDir_TempDirIsCleaned(self, processRunnerMock):
 		repoPath = super(self.__class__, self)._getBareRepoPath()
 		tempDir = mkdtemp()
 		try:
@@ -69,6 +70,13 @@ class RunTests(BaseRepoTestCase):
 			self.assertEqual(len(tempDirContents), 0)
 		finally:
 			rmtree(tempDir)
+
+	def test_BareGitRepo_GitIsNotAccessible_Error(self, processRunnerMock):
+		processRunnerMock.side_effect = RuntimeError("foo")
+
+		repoPath = super(self.__class__, self)._getBareRepoPath()
+		backuper = Backuper(repoPath)
+		self.assertRaises(RuntimeError, backuper.run)
 
 if __name__ == '__main__':
 	main()

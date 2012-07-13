@@ -18,10 +18,13 @@ class ProcessRunner:
 			argsList += args
 		# We need shell=True to find *.bat files in PATH
 		process = Popen(argsList, stdout=PIPE, stderr=PIPE, shell=True)
-		(outputData, errorData) = process.communicate()
+		result = process.communicate()
+		(outputData, errorData) = (data.rstrip() for data in result)
 
-		self.__log.debug("Process STDOUT: %s", outputData)
-		self.__log.debug("Process STDERR: %s", errorData)
+		if len(outputData) > 0:
+			self.__log.debug("Process STDOUT: %s", outputData)
+		if len(errorData) > 0:
+			self.__log.debug("Process STDERR: %s", errorData)
 
 		result = process.returncode
 		if result:
